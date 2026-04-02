@@ -54,13 +54,69 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 2rem;
         }
 
         .logo {
-            font-size: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+        }
+
+        .logo-title {
+            font-size: 1.6rem;
             font-weight: 700;
             color: var(--forest);
             font-family: 'Poppins', sans-serif;
+            line-height: 1;
+        }
+
+        .logo-subtitle {
+            font-size: 0.8rem;
+            color: var(--light-text);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-logo-image {
+            width: 62px;
+            height: 62px;
+            object-fit: contain;
+            border-radius: 16px;
+            background: rgba(245, 245, 220, 0.9);
+            padding: 0.4rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .brand-strip {
+            background: linear-gradient(90deg, rgba(232, 184, 56, 0.18), rgba(45, 95, 62, 0.08));
+            border-top: 1px solid rgba(232, 184, 56, 0.25);
+            border-bottom: 1px solid rgba(45, 95, 62, 0.08);
+        }
+
+        .brand-strip-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0.8rem 3rem;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            color: var(--forest);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .hero-company-line {
+            margin-bottom: 1.5rem;
+            color: var(--forest);
+            font-weight: 600;
+            font-size: 0.95rem;
         }
 
         .nav-links {
@@ -146,6 +202,7 @@
             text-decoration: none;
             display: inline-block;
             font-family: 'Inter', sans-serif;
+            border-radius: 999px;
         }
 
         .btn-primary {
@@ -542,6 +599,11 @@
             line-height: 1.8;
         }
 
+        .footer-company-line {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+        }
+
         .footer-title {
             color: var(--white);
             font-size: 1.2rem;
@@ -591,6 +653,24 @@
             .nav-links {
                 display: none;
             }
+
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-right {
+                margin-left: auto;
+            }
+
+            .nav-logo-image {
+                width: 52px;
+                height: 52px;
+            }
+
+            .brand-strip-inner {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.88rem;
+            }
             
             .footer-container {
                 grid-template-columns: 1fr;
@@ -603,20 +683,31 @@
     <!-- NAVIGATION -->
     <nav>
         <div class="nav-container">
-            <div class="logo">அரசன்</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#why">Why Arasan</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="logo">
+                <span class="logo-title">அரசன் பிராண்ட்</span>
+                <span class="logo-subtitle">Premium Rice from Madurai</span>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#why">Why Arasan</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <img src="images/Arasan_Logo_1.png" alt="Arasan Brand Logo" class="nav-logo-image">
+            </div>
         </div>
     </nav>
+
+    <div class="brand-strip">
+        <div class="brand-strip-inner">அரசன் பிராண்ட் is proudly presented under Chandradevi Hitech Agro Industries and S.T. Arasakumar Rice Mill.</div>
+    </div>
 
     <!-- HERO SECTION -->
     <section class="hero" id="home">
         <div class="hero-content">
+            <p class="hero-company-line">A trusted brand from Chandradevi Hitech Agro Industries and S.T. Arasakumar Rice Mill.</p>
             <h1>Rice That Makes Every Meal Memorable</h1>
             <p class="hero-subtitle">Premium Quality | Madurai Heritage | Perfectly Aged</p>
             
@@ -727,8 +818,7 @@
                 <!-- HMT Sona Ponni -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/photio_image_1.jpg" alt="HMT Sona Ponni Rice">
-                        <span class="product-tag">Bestseller</span>
+                        <img src="images/photio_image_9.jpg" alt="HMT Sona Ponni Rice">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">HMT Sona Ponni</h3>
@@ -747,7 +837,7 @@
                 <div class="product-card">
                     <div class="product-image">
                         <img src="images/photio_image_4.jpg" alt="Jeera Rice">
-                        <span class="product-tag">Premium</span>
+                        <span class="product-tag">Bestseller</span>
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Jeera Rice</h3>
@@ -765,7 +855,7 @@
                 <!-- RNR Rice -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/photio_image_2.jpg" alt="RNR Rice">
+                        <img src="images/photio_image_8.jpg" alt="RNR Rice">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">RNR Rice</h3>
@@ -782,7 +872,7 @@
                 <!-- Akshya Ponni -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/photio_image_8.jpg" alt="Akshya Ponni Rice">
+                        <img src="images/photio_image_3.jpg" alt="Akshya Ponni Rice">
                     </div>
                     <div class="product-info">
                         <h3 class="product-name">Akshya Ponni</h3>
@@ -799,7 +889,7 @@
                 <!-- Marriage Special -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/photio_image_6.jpg" alt="Marriage Special Rice">
+                        <img src="images/photio_image_7.jpg" alt="Marriage Special Rice">
                         <span class="product-tag">Festive</span>
                     </div>
                     <div class="product-info">
@@ -879,20 +969,20 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
-                    <p class="testimonial-text"></p>
+                    <p class="testimonial-text">Consistent quality and hygienic supply that works well for large-scale hospital kitchens.</p>
                     <p class="testimonial-author">Meenakshi Mission Hospital & Research Centre</p>
                     <p class="testimonial-location">Madurai</p>
                 </div>
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
-                
+                    <p class="testimonial-text">Reliable bulk delivery and dependable cooking results for our student mess operations.</p>
                     <p class="testimonial-author">Sethu Institute of Technology</p>
                     <p class="testimonial-location">Virudhunagar</p>
                 </div>
 
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
-                    <p class="testimonial-text"></p>
+                    <p class="testimonial-text">A trusted vendor for staff catering needs, with steady quality and professional service.</p>
                     <p class="testimonial-author">DCW Ltd.</p>
                     <p class="testimonial-location">Tuticorin</p>
                 </div>
@@ -917,7 +1007,7 @@
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>All our rice varieties are aged for a minimum of 12 months. This aging process enhances the flavor and texture of the grain, making it perfect for everyday cooking and special occasions.</p>
+                        <p>Our rice is aged anywhere from 3 to 24 months depending on the variety and intended cooking profile. This controlled aging process helps improve aroma, texture, and cooking performance for both daily meals and special occasions.</p>
                     </div>
                 </div>
 
@@ -927,7 +1017,7 @@
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>We source premium paddy varieties from Karnataka (Gangavathi region) and Madhya Pradesh. We work directly with trusted farmers to ensure consistent quality.</p>
+                        <p>We source premium paddy varieties from Andhra Pradesh, Tamil Nadu, Karnataka, and Maharashtra. We work with trusted farmers and suppliers across these regions to maintain consistent grain quality throughout the year.</p>
                     </div>
                 </div>
 
@@ -978,8 +1068,9 @@
     <footer id="contact">
         <div class="footer-container">
             <div class="footer-brand">
-                <h3>Arasan Rice Mill</h3>
-                <p class="footer-tagline">S.T. Arasakumar Rice Mill<br>Premium Quality Rice from Madurai<br>Serving families for generations</p>
+                <h3>அரசன் பிராண்ட்</h3>
+                <p class="footer-tagline">Premium Quality Rice from Madurai<br>Serving families for generations</p>
+                <p class="footer-company-line">Under Chandradevi Hitech Agro Industries<br>S.T. Arasakumar Rice Mill</p>
             </div>
 
             <div class="footer-col">
@@ -1006,6 +1097,10 @@
                 <h4 class="footer-title">Contact</h4>
                 <ul class="footer-links">
                     <li>Madurai, Tamil Nadu</li>
+                    <li>Phone: +91 XXXXX XXXXX</li>
+                    <li>WhatsApp: +91 XXXXX XXXXX</li>
+                    <li>Email: sales@yourdomain.com</li>
+                    <li>Email: info@yourdomain.com</li>
                     <li>FSSAI Certified</li>
                     <li>Wholesale Inquiries Welcome</li>
                 </ul>
@@ -1013,7 +1108,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 Arasan Rice Mill. All rights reserved. | S.T. Arasakumar Rice Mill, Madurai</p>
+            <p>&copy; 2026 Arasan Brand. All rights reserved. | Chandradevi Hitech Agro Industries | S.T. Arasakumar Rice Mill, Madurai</p>
         </div>
     </footer>
 
