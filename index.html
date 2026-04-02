@@ -95,6 +95,25 @@
             gap: 1.5rem;
         }
 
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem 1.3rem;
+            border-radius: 999px;
+            background: var(--maroon);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.92rem;
+            box-shadow: 0 10px 24px rgba(122, 27, 22, 0.18);
+            white-space: nowrap;
+        }
+
+        .nav-cta:hover {
+            background: #65130f;
+        }
+
         .nav-logo-image {
             width: 92px;
             height: 92px;
@@ -244,6 +263,29 @@
             column-gap: 2.75rem;
             row-gap: 1rem;
             align-items: center;
+        }
+
+        .proof-strip {
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.85rem;
+        }
+
+        .proof-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            padding: 0.75rem 1rem;
+            border-radius: 999px;
+            background: rgba(245, 245, 220, 0.85);
+            color: var(--forest);
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+
+        .proof-pill strong {
+            color: var(--maroon);
         }
 
         .badge {
@@ -490,7 +532,32 @@
             color: var(--light-text);
             font-size: 0.9rem;
             line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .product-details {
             margin-top: auto;
+            display: grid;
+            gap: 0.75rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .product-detail {
+            display: grid;
+            grid-template-columns: 92px 1fr;
+            gap: 0.85rem;
+            align-items: start;
+            font-size: 0.88rem;
+        }
+
+        .product-detail-label {
+            color: var(--forest);
+            font-weight: 700;
+        }
+
+        .product-detail-value {
+            color: var(--light-text);
         }
 
         /* TESTIMONIALS */
@@ -583,6 +650,21 @@
             font-size: 0.9rem;
         }
 
+        .testimonial-type {
+            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            padding: 0.45rem 0.8rem;
+            border-radius: 999px;
+            background: rgba(232, 184, 56, 0.16);
+            color: var(--gold);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
         .location-icon {
             width: 18px;
             height: 18px;
@@ -617,7 +699,7 @@
 
         .faq-question {
             background: var(--cream);
-            padding: 1.5rem 2rem;
+            padding: 1.65rem 2rem;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
@@ -625,6 +707,7 @@
             font-weight: 600;
             color: var(--forest);
             transition: background 0.3s;
+            font-size: 1.02rem;
         }
 
         .faq-question:hover {
@@ -656,6 +739,58 @@
         .faq-answer p {
             color: var(--light-text);
             line-height: 1.8;
+        }
+
+        .contact-panel {
+            max-width: 1400px;
+            margin: 0 auto 3rem;
+            padding: 2rem;
+            border-radius: 22px;
+            background: linear-gradient(135deg, rgba(122, 27, 22, 0.95), rgba(45, 95, 62, 0.95));
+            color: var(--white);
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            box-shadow: 0 24px 50px rgba(0, 0, 0, 0.18);
+        }
+
+        .contact-panel-title {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-panel-text {
+            color: rgba(255, 255, 255, 0.82);
+            max-width: 560px;
+        }
+
+        .contact-panel-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .contact-panel-item {
+            padding: 1rem 1.1rem;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .contact-panel-label {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.35rem;
+            font-weight: 700;
+        }
+
+        .contact-panel-value {
+            color: var(--white);
+            font-weight: 600;
+            line-height: 1.6;
         }
 
         /* FOOTER */
@@ -771,6 +906,10 @@
                 display: none;
             }
 
+            .nav-cta {
+                display: none;
+            }
+
             .nav-container {
                 padding: 1rem 1.5rem;
             }
@@ -787,6 +926,28 @@
             .brand-strip-inner {
                 padding: 0.8rem 1.5rem;
                 font-size: 0.88rem;
+            }
+
+            .proof-strip {
+                gap: 0.7rem;
+            }
+
+            .product-detail {
+                grid-template-columns: 82px 1fr;
+            }
+
+            .contact-panel {
+                grid-template-columns: 1fr;
+                margin-bottom: 2.5rem;
+                padding: 1.5rem;
+            }
+
+            .contact-panel-title {
+                font-size: 1.7rem;
+            }
+
+            .contact-panel-grid {
+                grid-template-columns: 1fr;
             }
             
             .footer-container {
@@ -815,6 +976,7 @@
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <a href="tel:+918610653148" class="nav-cta">Call Now</a>
             </div>
         </div>
     </nav>
@@ -848,6 +1010,12 @@
                     <span class="badge-icon">✓</span>
                     <span>Trusted Since Generations</span>
                 </div>
+            </div>
+
+            <div class="proof-strip">
+                <div class="proof-pill"><strong>Trusted by</strong> Hospitals</div>
+                <div class="proof-pill"><strong>Preferred for</strong> College Mess Supply</div>
+                <div class="proof-pill"><strong>Ready for</strong> Wholesale Orders</div>
             </div>
         </div>
 
@@ -949,6 +1117,11 @@
                         <p class="product-meta">
                             Soft & fluffy | Best for biryanis | Perfect with sambar | 3 whistles | 1:3 ratio
                         </p>
+                        <div class="product-details">
+                            <div class="product-detail"><span class="product-detail-label">Best for</span><span class="product-detail-value">Daily meals, lunch service, soft home-style rice</span></div>
+                            <div class="product-detail"><span class="product-detail-label">Aging</span><span class="product-detail-value">Traditionally aged for improved aroma and texture</span></div>
+                            <div class="product-detail"><span class="product-detail-label">Pack type</span><span class="product-detail-value">Retail and bulk supply options available</span></div>
+                        </div>
                     </div>
                 </div>
 
@@ -968,6 +1141,11 @@
                         <p class="product-meta">
                             Absorbs flavors well | Ideal for biryani | Non-sticky | Quick cooking | 1:2 ratio
                         </p>
+                        <div class="product-details">
+                            <div class="product-detail"><span class="product-detail-label">Best for</span><span class="product-detail-value">Biryani kitchens, festive menus, caterers</span></div>
+                            <div class="product-detail"><span class="product-detail-label">Aging</span><span class="product-detail-value">Selected lots aged for stronger fragrance</span></div>
+                            <div class="product-detail"><span class="product-detail-label">Pack type</span><span class="product-detail-value">High-demand variety for institutional buying</span></div>
+                        </div>
                     </div>
                 </div>
 
@@ -985,6 +1163,11 @@
                         <p class="product-meta">
                             Great value | Daily meals | Good texture | Restaurant choice | Bulk available
                         </p>
+                        <div class="product-details">
+                            <div class="product-detail"><span class="product-detail-label">Best for</span><span class="product-detail-value">Restaurants, regular household cooking, value buying</span></div>
+                            <div class="product-detail"><span class="product-detail-label">Aging</span><span class="product-detail-value">Balanced aging for dependable everyday cooking</span></div>
+                            <div class="product-detail"><span class="product-detail-label">Pack type</span><span class="product-detail-value">Suitable for repeated bulk replenishment</span></div>
+                        </div>
                     </div>
                 </div>
 
@@ -1002,6 +1185,11 @@
                         <p class="product-meta">
                             Special occasions | Soft texture | Rich taste | Temple offerings | Wedding favorite
                         </p>
+                        <div class="product-details">
+                            <div class="product-detail"><span class="product-detail-label">Best for</span><span class="product-detail-value">Festive meals, temple use, special family occasions</span></div>
+                            <div class="product-detail"><span class="product-detail-label">Aging</span><span class="product-detail-value">Curated for fuller taste and softer cooked grain</span></div>
+                            <div class="product-detail"><span class="product-detail-label">Pack type</span><span class="product-detail-value">Premium retail presentation and bulk dispatch</span></div>
+                        </div>
                     </div>
                 </div>
 
@@ -1020,6 +1208,11 @@
                         <p class="product-meta">
                             Wedding events | Large gatherings | Consistent quality | Bulk pricing | Delivery available
                         </p>
+                        <div class="product-details">
+                            <div class="product-detail"><span class="product-detail-label">Best for</span><span class="product-detail-value">Wedding catering, event cooking, large guest counts</span></div>
+                            <div class="product-detail"><span class="product-detail-label">Aging</span><span class="product-detail-value">Prepared for volume cooking with stable texture</span></div>
+                            <div class="product-detail"><span class="product-detail-label">Pack type</span><span class="product-detail-value">Bulk order pricing with dispatch support</span></div>
+                        </div>
                     </div>
                 </div>
 
@@ -1037,6 +1230,11 @@
                         <p class="product-meta">
                             Authentic taste | Traditional cooking | Heritage variety | Time-tested | Home cooking
                         </p>
+                        <div class="product-details">
+                            <div class="product-detail"><span class="product-detail-label">Best for</span><span class="product-detail-value">Traditional meals, raw rice cooking, heritage recipes</span></div>
+                            <div class="product-detail"><span class="product-detail-label">Aging</span><span class="product-detail-value">Managed to preserve authentic flavor profile</span></div>
+                            <div class="product-detail"><span class="product-detail-label">Pack type</span><span class="product-detail-value">Retail packs and repeat-order availability</span></div>
+                        </div>
                     </div>
                 </div>
 
@@ -1054,6 +1252,11 @@
                         <p class="product-meta">
                             Economic choice | Kanji & porridge | Animal feed | Industrial use | Value pricing
                         </p>
+                        <div class="product-details">
+                            <div class="product-detail"><span class="product-detail-label">Best for</span><span class="product-detail-value">Kanji, porridge, utility and economical applications</span></div>
+                            <div class="product-detail"><span class="product-detail-label">Aging</span><span class="product-detail-value">Selected for practical use and consistent handling</span></div>
+                            <div class="product-detail"><span class="product-detail-label">Pack type</span><span class="product-detail-value">Value-focused supply for bulk requirements</span></div>
+                        </div>
                     </div>
                 </div>
 
@@ -1071,6 +1274,11 @@
                         <p class="product-meta">
                             Light & fluffy | Daily cooking | Elderly-friendly | Cooks faster | South Indian staple
                         </p>
+                        <div class="product-details">
+                            <div class="product-detail"><span class="product-detail-label">Best for</span><span class="product-detail-value">Light meals, easy digestion, everyday home cooking</span></div>
+                            <div class="product-detail"><span class="product-detail-label">Aging</span><span class="product-detail-value">Moderately aged for lighter finished texture</span></div>
+                            <div class="product-detail"><span class="product-detail-label">Pack type</span><span class="product-detail-value">Convenient family and retail movement</span></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1091,6 +1299,7 @@
                     <p class="testimonial-text">Consistent quality and hygienic supply that works well for large-scale hospital kitchens.</p>
                     <p class="testimonial-author">Meenakshi Mission Hospital & Research Centre</p>
                     <p class="testimonial-location"><span class="location-icon">•</span>Madurai</p>
+                    <span class="testimonial-type">Hospital Supply</span>
                     <div class="customer-logo">
                         <img src="images/meenakshmi_mission_logo.png" alt="Meenakshi Mission Hospital logo">
                     </div>
@@ -1100,6 +1309,7 @@
                     <p class="testimonial-text">Reliable bulk delivery and dependable cooking results for our student mess operations.</p>
                     <p class="testimonial-author">Sethu Institute of Technology</p>
                     <p class="testimonial-location"><span class="location-icon">•</span>Virudhunagar</p>
+                    <span class="testimonial-type">Institutional Buyer</span>
                     <div class="customer-logo">
                         <img src="images/Sethu_Institute_of_Technology_Logo.png" alt="Sethu Institute of Technology logo">
                     </div>
@@ -1110,6 +1320,7 @@
                     <p class="testimonial-text">A trusted vendor for staff catering needs, with steady quality and professional service.</p>
                     <p class="testimonial-author">DCW Ltd.</p>
                     <p class="testimonial-location"><span class="location-icon">•</span>Tuticorin</p>
+                    <span class="testimonial-type">Corporate Kitchen</span>
                     <div class="customer-logo">
                         <img src="images/dcw_logo.png" alt="DCW Ltd logo">
                     </div>
@@ -1194,6 +1405,31 @@
 
     <!-- FOOTER -->
     <footer id="contact">
+        <div class="contact-panel">
+            <div>
+                <h2 class="contact-panel-title">Let’s Talk Bulk Supply</h2>
+                <p class="contact-panel-text">Connect with Arasan Brand for wholesale rice supply, institutional orders, and repeat delivery planning for kitchens, events, and commercial buyers.</p>
+            </div>
+            <div class="contact-panel-grid">
+                <div class="contact-panel-item">
+                    <div class="contact-panel-label">Phone</div>
+                    <div class="contact-panel-value">+91 86106 53148</div>
+                </div>
+                <div class="contact-panel-item">
+                    <div class="contact-panel-label">Email</div>
+                    <div class="contact-panel-value">s.t.arasakumarrice@gmail.com</div>
+                </div>
+                <div class="contact-panel-item">
+                    <div class="contact-panel-label">Address</div>
+                    <div class="contact-panel-value">No 4/193, Ayyanarpuram Panaiyur, Velammal Medical College, Nedungulam Road, Madurai East - 625009</div>
+                </div>
+                <div class="contact-panel-item">
+                    <div class="contact-panel-label">Business Type</div>
+                    <div class="contact-panel-value">Retail, wholesale, catering, and institutional rice supply</div>
+                </div>
+            </div>
+        </div>
+
         <div class="footer-container">
             <div class="footer-brand">
                 <h3>அரசன் பிராண்ட் | Chandra Devi Hitech Agro Industries</h3>
