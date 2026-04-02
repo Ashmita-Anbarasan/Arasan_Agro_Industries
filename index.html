@@ -29,6 +29,7 @@
             color: var(--text);
             line-height: 1.6;
             background: var(--white);
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4 {
@@ -83,11 +84,14 @@
             display: flex;
             flex-direction: column;
             gap: 0.15rem;
+            justify-content: center;
         }
 
         .nav-right {
             display: flex;
             align-items: center;
+            justify-content: flex-end;
+            flex: 1;
             gap: 1.5rem;
         }
 
@@ -125,6 +129,7 @@
 
         .nav-links {
             display: flex;
+            align-items: center;
             gap: 3rem;
             list-style: none;
         }
@@ -159,7 +164,7 @@
 
         /* HERO SECTION - ASYMMETRIC */
         .hero {
-            margin-top: 32px;
+            margin-top: 20px;
             min-height: 90vh;
             display: grid;
             grid-template-columns: 45% 55%;
@@ -173,6 +178,7 @@
 
         .hero-content {
             padding-right: 2rem;
+            max-width: 580px;
         }
 
         .hero h1 {
@@ -192,6 +198,7 @@
 
         .cta-group {
             display: flex;
+            flex-wrap: wrap;
             gap: 1.5rem;
             margin-bottom: 3rem;
         }
@@ -233,6 +240,7 @@
 
         .trust-badges {
             display: flex;
+            flex-wrap: wrap;
             gap: 2rem;
             align-items: center;
         }
@@ -260,6 +268,8 @@
         .hero-slider {
             position: relative;
             height: 600px;
+            width: 100%;
+            justify-self: end;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
@@ -322,6 +332,9 @@
         .section-header {
             text-align: center;
             margin-bottom: 4rem;
+            max-width: 760px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .section-title {
@@ -333,12 +346,15 @@
         .section-subtitle {
             font-size: 1.2rem;
             color: var(--light-text);
+            max-width: 640px;
+            margin: 0 auto;
         }
 
         .features-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 3rem;
+            align-items: stretch;
         }
 
         .feature-card {
@@ -347,6 +363,9 @@
             border-radius: 12px;
             transition: all 0.3s;
             border: 1px solid transparent;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .feature-card:hover {
@@ -389,6 +408,7 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
+            align-items: stretch;
         }
 
         .product-card {
@@ -397,6 +417,9 @@
             overflow: hidden;
             transition: all 0.4s;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .product-card:hover {
@@ -436,6 +459,9 @@
 
         .product-info {
             padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
         }
 
         .product-name {
@@ -463,6 +489,7 @@
             color: var(--light-text);
             font-size: 0.9rem;
             line-height: 1.8;
+            margin-top: auto;
         }
 
         /* TESTIMONIALS */
@@ -482,6 +509,7 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 3rem;
             margin-top: 4rem;
+            align-items: stretch;
         }
 
         .testimonial-card {
@@ -490,31 +518,41 @@
             padding: 2.5rem;
             border-radius: 15px;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(232, 184, 56, 0.08));
+            pointer-events: none;
+        }
+
+        .testimonial-card > * {
+            position: relative;
+            z-index: 1;
         }
 
         .customer-logo {
-            height: 64px;
+            height: 78px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
-            padding: 0.9rem 1rem;
-            border-radius: 14px;
-            background: rgba(255, 255, 255, 0.92);
-            color: var(--forest);
-            text-align: center;
-            font-weight: 700;
-            line-height: 1.2;
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+            margin-top: 1.5rem;
+            padding: 0;
         }
 
-        .customer-logo.small-text {
-            font-size: 0.95rem;
-        }
-
-        .customer-logo.short-text {
-            font-size: 1.15rem;
-            letter-spacing: 0.04em;
+        .customer-logo img {
+            max-width: 100%;
+            max-height: 56px;
+            object-fit: contain;
+            object-position: center;
+            display: block;
         }
 
         .stars {
@@ -527,16 +565,34 @@
             font-size: 1.05rem;
             line-height: 1.8;
             margin-bottom: 1.5rem;
+            flex-grow: 1;
         }
 
         .testimonial-author {
             font-weight: 600;
             font-size: 1.1rem;
+            margin-bottom: 0.35rem;
         }
 
         .testimonial-location {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
             color: rgba(255, 255, 255, 0.7);
             font-size: 0.9rem;
+        }
+
+        .location-icon {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: rgba(232, 184, 56, 0.18);
+            color: var(--gold);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            flex-shrink: 0;
         }
 
         /* FAQ */
@@ -612,15 +668,23 @@
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
+            grid-template-columns: 1.8fr 0.9fr 0.9fr 1.2fr;
             gap: 4rem;
             margin-bottom: 3rem;
+            align-items: start;
+        }
+
+        .footer-brand,
+        .footer-col {
+            display: flex;
+            flex-direction: column;
         }
 
         .footer-brand h3 {
             color: var(--gold);
             font-size: 2rem;
             margin-bottom: 1rem;
+            line-height: 1.25;
         }
 
         .footer-tagline {
@@ -645,6 +709,7 @@
 
         .footer-links li {
             margin-bottom: 0.8rem;
+            line-height: 1.7;
         }
 
         .footer-links a {
@@ -668,17 +733,39 @@
             .hero {
                 grid-template-columns: 1fr;
                 padding: 2rem 1.5rem;
+                gap: 2.5rem;
             }
             
             .hero h1 {
                 font-size: 2.5rem;
+            }
+
+            .hero-content {
+                padding-right: 0;
+                max-width: none;
             }
             
             .features-grid,
             .testimonials-grid {
                 grid-template-columns: 1fr;
             }
-            
+
+            .section-title {
+                font-size: 2.3rem;
+            }
+
+            .section-header {
+                margin-bottom: 3rem;
+            }
+
+            .cta-group {
+                gap: 1rem;
+            }
+
+            .trust-badges {
+                gap: 1rem;
+            }
+
             .nav-links {
                 display: none;
             }
@@ -999,26 +1086,32 @@
 
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <div class="customer-logo small-text">Meenakshi Mission Hospital</div>
                     <div class="stars">★★★★★</div>
                     <p class="testimonial-text">Consistent quality and hygienic supply that works well for large-scale hospital kitchens.</p>
                     <p class="testimonial-author">Meenakshi Mission Hospital & Research Centre</p>
-                    <p class="testimonial-location">Madurai</p>
+                    <p class="testimonial-location"><span class="location-icon">•</span>Madurai</p>
+                    <div class="customer-logo">
+                        <img src="images/meenakshmi_mission_logo.png" alt="Meenakshi Mission Hospital logo">
+                    </div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="customer-logo small-text">Sethu Institute of Technology</div>
                     <div class="stars">★★★★★</div>
                     <p class="testimonial-text">Reliable bulk delivery and dependable cooking results for our student mess operations.</p>
                     <p class="testimonial-author">Sethu Institute of Technology</p>
-                    <p class="testimonial-location">Virudhunagar</p>
+                    <p class="testimonial-location"><span class="location-icon">•</span>Virudhunagar</p>
+                    <div class="customer-logo">
+                        <img src="images/Sethu_Institute_of_Technology_Logo.png" alt="Sethu Institute of Technology logo">
+                    </div>
                 </div>
 
                 <div class="testimonial-card">
-                    <div class="customer-logo short-text">DCW LTD.</div>
                     <div class="stars">★★★★★</div>
                     <p class="testimonial-text">A trusted vendor for staff catering needs, with steady quality and professional service.</p>
                     <p class="testimonial-author">DCW Ltd.</p>
-                    <p class="testimonial-location">Tuticorin</p>
+                    <p class="testimonial-location"><span class="location-icon">•</span>Tuticorin</p>
+                    <div class="customer-logo">
+                        <img src="images/dcw_logo.png" alt="DCW Ltd logo">
+                    </div>
                 </div>
 
                 
@@ -1102,7 +1195,7 @@
     <footer id="contact">
         <div class="footer-container">
             <div class="footer-brand">
-                <h3>அரசன் பிராண்ட்</h3>
+                <h3>அரசன் பிராண்ட் | Chandra Devi Hitech Agro Industries</h3>
                 <p class="footer-tagline">Premium Quality Rice from Madurai<br>Serving families for generations</p>
                 <p class="footer-company-line">Under Chandradevi Hitech Agro Industries<br>S.T. Arasakumar Rice Mill</p>
             </div>
@@ -1130,11 +1223,9 @@
             <div class="footer-col">
                 <h4 class="footer-title">Contact</h4>
                 <ul class="footer-links">
-                    <li>193 &amp; 193 B, Muthu Karuppapillai Street, Samanatham, Ayyanarpuram, Madurai - 9</li>
-                    <li>Phone: +91 96777 33901</li>
-                    <li>WhatsApp: +91 96777 33902</li>
-                    <li>Email: sales@yourdomain.com</li>
-                    <li>Email: info@yourdomain.com</li>
+                    <li>No 4/193, Ayyanarpuram Panaiyur, Velammal Medical College, Nedungulam Road, Madurai East - 625009</li>
+                    <li>Phone: +91 86106 53148</li>
+                    <li>Email: s.t.arasakumarrice@gmail.com</li>
                     <li>FSSAI Certified</li>
                     <li>Wholesale Inquiries Welcome</li>
                 </ul>
