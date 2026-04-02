@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arasan Rice Mill | Premium Rice from Madurai</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --forest: #2D5F3E;
+            --gold: #E8B838;
+            --cream: #F5F5DC;
+            --white: #FFFFFF;
+            --text: #1a1a1a;
+            --light-text: #666;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--forest);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--forest);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* HERO SECTION - ASYMMETRIC */
+        .hero {
+            margin-top: 80px;
+            min-height: 90vh;
+            display: grid;
+            grid-template-columns: 45% 55%;
+            align-items: center;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 4rem 3rem;
+            gap: 4rem;
+        }
+
+        .hero-content {
+            padding-right: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--forest);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--light-text);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--forest);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(45, 95, 62, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(45, 95, 62, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--forest);
+            border: 2px solid var(--forest);
+        }
+
+        .btn-secondary:hover {
+            background: var(--forest);
+            color: var(--white);
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+
+        .badge-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        .hero-slider {
+            position: relative;
+            height: 600px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-nav {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 10;
+        }
+
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .slider-dot.active {
+            background: var(--white);
+            width: 30px;
+            border-radius: 5px;
+        }
+
+        /* WHY CHOOSE US */
+        .why-section {
+            background: var(--cream);
+            padding: 6rem 3rem;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: var(--forest);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--light-text);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            border-color: var(--gold);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gold);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            color: var(--forest);
+            margin-bottom: 1rem;
+        }
+
+        .feature-text {
+            color: var(--light-text);
+            font-size: 0.95rem;
+        }
+
+        /* PRODUCTS - MASONRY */
+        .products-section {
+            padding: 6rem 3rem;
+            background: var(--white);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gold);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .product-info {
+            padding: 2rem;
+        }
+
+        .product-name {
+            font-size: 1.5rem;
+            color: var(--forest);
+            margin-bottom: 1rem;
+        }
+
+        .product-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .spec-tag {
+            background: var(--cream);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+
+        .product-meta {
+            color: var(--light-text);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials-section {
+            background: var(--forest);
+            color: var(--white);
+            padding: 6rem 3rem;
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stars {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-location {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: 6rem 3rem;
+            background: var(--white);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+            margin-top: 3rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+
+        .faq-question {
+            background: var(--cream);
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--forest);
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #ebe9d7;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--gold);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            background: var(--white);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 1.5rem 2rem;
+        }
+
+        .faq-answer p {
+            color: var(--light-text);
+            line-height: 1.8;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #1a1a1a;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 4rem 3rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            color: var(--gold);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-tagline {
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .footer-title {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 2rem 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .features-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">அரசன்</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#why">Why Arasan</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Rice That Makes Every Meal Memorable</h1>
+            <p class="hero-subtitle">Premium Quality | Madurai Heritage | Perfectly Aged</p>
+            
+            <div class="cta-group">
+                <a href="#products" class="btn btn-primary">Explore Products</a>
+                <a href="#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+
+            <div class="trust-badges">
+                <div class="badge">
+                    <span class="badge-icon">✓</span>
+                    <span>FSSAI Certified</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">✓</span>
+                    <span>Aged 12+ Months</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">✓</span>
+                    <span>Trusted Since Generations</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-slider">
+            <div class="slide active">
+                <img src="images/photio_image_1.jpg" alt="Arasan Rice">
+            </div>
+            <div class="slide">
+                <img src="images/photio_image_4.jpg" alt="Arasan Rice">
+            </div>
+            <div class="slide">
+                <img src="images/photio_image_8.jpg" alt="Arasan Rice">
+            </div>
+            <div class="slide">
+                <img src="images/photio_image_9.jpg" alt="Arasan Rice">
+            </div>
+            <div class="slide">
+                <img src="images/photio_image_11.jpg" alt="Arasan Rice">
+            </div>
+            <div class="slider-nav">
+                <span class="slider-dot active" data-slide="0"></span>
+                <span class="slider-dot" data-slide="1"></span>
+                <span class="slider-dot" data-slide="2"></span>
+                <span class="slider-dot" data-slide="3"></span>
+                <span class="slider-dot" data-slide="4"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-section" id="why">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Why Arasan?</h2>
+                <p class="section-subtitle">Tradition Meets Quality | Every Grain Tells a Story</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌾</div>
+                    <h3 class="feature-title">Aged to Perfection</h3>
+                    <p class="feature-text">Minimum 12 months | Enhanced flavor | Better texture | Traditional method</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">✓</div>
+                    <h3 class="feature-title">Quality Tested</h3>
+                    <p class="feature-text">FSSAI certified | Every batch tested | Consistent quality | Zero compromise</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🏔️</div>
+                    <h3 class="feature-title">Premium Sourcing</h3>
+                    <p class="feature-text">Select paddy varieties | Trusted farmers | Karnataka & MP regions | Quality first</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3 class="feature-title">Modern Milling</h3>
+                    <p class="feature-text">Advanced equipment | Minimal breakage | Nutrient retention | Clean process</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                    <h3 class="feature-title">Family Legacy</h3>
+                    <p class="feature-text">Generations of expertise | Madurai heritage | Trusted locally | Community choice</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3 class="feature-title">Fresh Delivery</h3>
+                    <p class="feature-text">Direct from mill | Sealed packaging | Quality guaranteed | Timely dispatch</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products-section" id="products">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Our Rice Varieties</h2>
+                <p class="section-subtitle">Choose the Perfect Rice | For Every Occasion</p>
+            </div>
+
+            <div class="products-grid">
+                <!-- HMT Sona Ponni -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/photio_image_1.jpg" alt="HMT Sona Ponni Rice">
+                        <span class="product-tag">Bestseller</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">HMT Sona Ponni</h3>
+                        <div class="product-specs">
+                            <span class="spec-tag">Medium grain</span>
+                            <span class="spec-tag">Aromatic</span>
+                            <span class="spec-tag">Daily use</span>
+                        </div>
+                        <p class="product-meta">
+                            Soft & fluffy | Best for biryanis | Perfect with sambar | 3 whistles | 1:3 ratio
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Jeera Rice -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/photio_image_4.jpg" alt="Jeera Rice">
+                        <span class="product-tag">Premium</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Jeera Rice</h3>
+                        <div class="product-specs">
+                            <span class="spec-tag">Short grain</span>
+                            <span class="spec-tag">Aromatic</span>
+                            <span class="spec-tag">Biryani special</span>
+                        </div>
+                        <p class="product-meta">
+                            Absorbs flavors well | Ideal for biryani | Non-sticky | Quick cooking | 1:2 ratio
+                        </p>
+                    </div>
+                </div>
+
+                <!-- RNR Rice -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/photio_image_2.jpg" alt="RNR Rice">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">RNR Rice</h3>
+                        <div class="product-specs">
+                            <span class="spec-tag">Versatile</span>
+                            <span class="spec-tag">Economic</span>
+                        </div>
+                        <p class="product-meta">
+                            Great value | Daily meals | Good texture | Restaurant choice | Bulk available
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Akshya Ponni -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/photio_image_8.jpg" alt="Akshya Ponni Rice">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Akshya Ponni</h3>
+                        <div class="product-specs">
+                            <span class="spec-tag">Premium</span>
+                            <span class="spec-tag">Festive</span>
+                        </div>
+                        <p class="product-meta">
+                            Special occasions | Soft texture | Rich taste | Temple offerings | Wedding favorite
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Marriage Special -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/photio_image_6.jpg" alt="Marriage Special Rice">
+                        <span class="product-tag">Festive</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Marriage Special</h3>
+                        <div class="product-specs">
+                            <span class="spec-tag">Premium quality</span>
+                            <span class="spec-tag">Bulk orders</span>
+                        </div>
+                        <p class="product-meta">
+                            Wedding events | Large gatherings | Consistent quality | Bulk pricing | Delivery available
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Nawaab Ponni -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/photio_image_10.jpg" alt="Nawaab Ponni Rice">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Nawaab Ponni</h3>
+                        <div class="product-specs">
+                            <span class="spec-tag">Raw rice</span>
+                            <span class="spec-tag">Traditional</span>
+                        </div>
+                        <p class="product-meta">
+                            Authentic taste | Traditional cooking | Heritage variety | Time-tested | Home cooking
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Old Jeera Broken -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/photio_image_11.jpg" alt="Old Jeera Broken">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Old Jeera Broken</h3>
+                        <div class="product-specs">
+                            <span class="spec-tag">Budget-friendly</span>
+                            <span class="spec-tag">Multi-use</span>
+                        </div>
+                        <p class="product-meta">
+                            Economic choice | Kanji & porridge | Animal feed | Industrial use | Value pricing
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Kolam Raw -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/photio_image_12.jpg" alt="Kolam Raw Rice">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Kolam Raw Rice</h3>
+                        <div class="product-specs">
+                            <span class="spec-tag">Light texture</span>
+                            <span class="spec-tag">Easy digest</span>
+                        </div>
+                        <p class="product-meta">
+                            Light & fluffy | Daily cooking | Elderly-friendly | Cooks faster | South Indian staple
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section">
+        <div class="testimonials-container">
+            <div class="section-header">
+                <h2 class="section-title" style="color: white;">What Our Customers Say</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Trusted by Families | Across Tamil Nadu</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text"></p>
+                    <p class="testimonial-author">Meenakshi Mission Hospital & Research Centre</p>
+                    <p class="testimonial-location">Madurai</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                
+                    <p class="testimonial-author">Sethu Institute of Technology</p>
+                    <p class="testimonial-location">Virudhunagar</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text"></p>
+                    <p class="testimonial-author">DCW Ltd.</p>
+                    <p class="testimonial-location">Tuticorin</p>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Everything You Need to Know | About Our Rice</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How aged is your rice?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>All our rice varieties are aged for a minimum of 12 months. This aging process enhances the flavor and texture of the grain, making it perfect for everyday cooking and special occasions.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Where do you source your paddy?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We source premium paddy varieties from Karnataka (Gangavathi region) and Madhya Pradesh. We work directly with trusted farmers to ensure consistent quality.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What's the difference between varieties?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>HMT Sona Ponni: Best for daily meals | Soft & aromatic. Jeera Rice: Perfect for biryanis | Absorbs flavors well. RNR: Economic | Great value for daily use. Each variety has unique characteristics suited for different dishes.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How should I store the rice?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Store in an airtight container in a cool, dry place. Avoid direct sunlight. Properly stored rice stays fresh for 6-12 months. Keep away from moisture and strong odors.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer bulk orders?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We supply to restaurants, wedding caterers, and bulk buyers. Special pricing available for large orders. Contact us for quotes and delivery options.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What are your delivery areas?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We deliver across Tamil Nadu and neighboring states. Contact us for specific delivery timelines and shipping charges to your location.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>Arasan Rice Mill</h3>
+                <p class="footer-tagline">S.T. Arasakumar Rice Mill<br>Premium Quality Rice from Madurai<br>Serving families for generations</p>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#why">Why Arasan</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Products</h4>
+                <ul class="footer-links">
+                    <li><a href="#products">HMT Sona Ponni</a></li>
+                    <li><a href="#products">Jeera Rice</a></li>
+                    <li><a href="#products">Akshya Ponni</a></li>
+                    <li><a href="#products">All Varieties</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Contact</h4>
+                <ul class="footer-links">
+                    <li>Madurai, Tamil Nadu</li>
+                    <li>FSSAI Certified</li>
+                    <li>Wholesale Inquiries Welcome</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Arasan Rice Mill. All rights reserved. | S.T. Arasakumar Rice Mill, Madurai</p>
+        </div>
+    </footer>
+
+    <script>
+        // HERO SLIDER
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.slider-dot');
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            currentSlide = n;
+            if (currentSlide >= slides.length) currentSlide = 0;
+            if (currentSlide < 0) currentSlide = slides.length - 1;
+            
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        // Auto advance slides
+        setInterval(nextSlide, 4000);
+
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+        });
+
+        // FAQ ACCORDION
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all items
+                faqItems.forEach(i => i.classList.remove('active'));
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // SMOOTH SCROLL
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // SCROLL ANIMATIONS
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Animate feature cards
+        document.querySelectorAll('.feature-card, .product-card, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
