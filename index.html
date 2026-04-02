@@ -21,6 +21,7 @@
             --white: #FFFFFF;
             --text: #1a1a1a;
             --light-text: #666;
+            --maroon: #7A1B16;
         }
 
         body {
@@ -59,8 +60,8 @@
 
         .logo {
             display: flex;
-            flex-direction: column;
-            gap: 0.15rem;
+            align-items: center;
+            gap: 1rem;
         }
 
         .logo-title {
@@ -78,6 +79,12 @@
             text-transform: uppercase;
         }
 
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+        }
+
         .nav-right {
             display: flex;
             align-items: center;
@@ -85,13 +92,10 @@
         }
 
         .nav-logo-image {
-            width: 62px;
-            height: 62px;
+            width: 92px;
+            height: 92px;
             object-fit: contain;
-            border-radius: 16px;
-            background: rgba(245, 245, 220, 0.9);
-            padding: 0.4rem;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            flex-shrink: 0;
         }
 
         .brand-strip {
@@ -155,7 +159,7 @@
 
         /* HERO SECTION - ASYMMETRIC */
         .hero {
-            margin-top: 80px;
+            margin-top: 32px;
             min-height: 90vh;
             display: grid;
             grid-template-columns: 45% 55%;
@@ -354,7 +358,7 @@
         .feature-icon {
             width: 60px;
             height: 60px;
-            background: var(--gold);
+            background: var(--maroon);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -486,6 +490,31 @@
             padding: 2.5rem;
             border-radius: 15px;
             border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .customer-logo {
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            padding: 0.9rem 1rem;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.92);
+            color: var(--forest);
+            text-align: center;
+            font-weight: 700;
+            line-height: 1.2;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .customer-logo.small-text {
+            font-size: 0.95rem;
+        }
+
+        .customer-logo.short-text {
+            font-size: 1.15rem;
+            letter-spacing: 0.04em;
         }
 
         .stars {
@@ -663,8 +692,8 @@
             }
 
             .nav-logo-image {
-                width: 52px;
-                height: 52px;
+                width: 72px;
+                height: 72px;
             }
 
             .brand-strip-inner {
@@ -684,8 +713,11 @@
     <nav>
         <div class="nav-container">
             <div class="logo">
-                <span class="logo-title">அரசன் பிராண்ட்</span>
-                <span class="logo-subtitle">Premium Rice from Madurai</span>
+                <img src="images/Arasan_Logo_1.png" alt="Arasan Brand Logo" class="nav-logo-image">
+                <div class="logo-text">
+                    <span class="logo-title">அரசன் பிராண்ட்</span>
+                    <span class="logo-subtitle">Premium Rice from Madurai</span>
+                </div>
             </div>
             <div class="nav-right">
                 <ul class="nav-links">
@@ -695,7 +727,6 @@
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <img src="images/Arasan_Logo_1.png" alt="Arasan Brand Logo" class="nav-logo-image">
             </div>
         </div>
     </nav>
@@ -774,7 +805,7 @@
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">✓</div>
+                    <div class="feature-icon" style="color: var(--white);">✓</div>
                     <h3 class="feature-title">Quality Tested</h3>
                     <p class="feature-text">FSSAI certified | Every batch tested | Consistent quality | Zero compromise</p>
                 </div>
@@ -968,12 +999,14 @@
 
             <div class="testimonials-grid">
                 <div class="testimonial-card">
+                    <div class="customer-logo small-text">Meenakshi Mission Hospital</div>
                     <div class="stars">★★★★★</div>
                     <p class="testimonial-text">Consistent quality and hygienic supply that works well for large-scale hospital kitchens.</p>
                     <p class="testimonial-author">Meenakshi Mission Hospital & Research Centre</p>
                     <p class="testimonial-location">Madurai</p>
                 </div>
                 <div class="testimonial-card">
+                    <div class="customer-logo small-text">Sethu Institute of Technology</div>
                     <div class="stars">★★★★★</div>
                     <p class="testimonial-text">Reliable bulk delivery and dependable cooking results for our student mess operations.</p>
                     <p class="testimonial-author">Sethu Institute of Technology</p>
@@ -981,6 +1014,7 @@
                 </div>
 
                 <div class="testimonial-card">
+                    <div class="customer-logo short-text">DCW LTD.</div>
                     <div class="stars">★★★★★</div>
                     <p class="testimonial-text">A trusted vendor for staff catering needs, with steady quality and professional service.</p>
                     <p class="testimonial-author">DCW Ltd.</p>
@@ -1096,9 +1130,9 @@
             <div class="footer-col">
                 <h4 class="footer-title">Contact</h4>
                 <ul class="footer-links">
-                    <li>Madurai, Tamil Nadu</li>
-                    <li>Phone: +91 XXXXX XXXXX</li>
-                    <li>WhatsApp: +91 XXXXX XXXXX</li>
+                    <li>193 &amp; 193 B, Muthu Karuppapillai Street, Samanatham, Ayyanarpuram, Madurai - 9</li>
+                    <li>Phone: +91 96777 33901</li>
+                    <li>WhatsApp: +91 96777 33902</li>
                     <li>Email: sales@yourdomain.com</li>
                     <li>Email: info@yourdomain.com</li>
                     <li>FSSAI Certified</li>
